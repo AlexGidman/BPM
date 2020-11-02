@@ -8,7 +8,8 @@ Project specific dependencies can be found in requirements.txt and can be instal
 pip install -r requirements.txt
 ```
 ### Executing program (development only)
-Once you have installed dependencies, you need to set the FLASK_APP & FLASK_ENV variables: 
+Once you have installed dependencies, you need to set the FLASK_APP & FLASK_ENV variables:
+
 * Mac / Linux 
 ```
 export FLASK_APP=bpm
