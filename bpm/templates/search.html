@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} : Search{% endblock %}
+{% block body %}
+<br>
+{% if tracks %}
+<h1>Search Results</h1>
+<hr>
+{% else %}
+<h1> No Results Found</h1>
+<hr>
+<p>Congratulations! Your taste in music is so esoteric, even Spotify hasn't heard of it.</p>
+{% endif %}
+<div class="card-columns">
+
+    {% for track in tracks %}
+    <a href="{{ url_for('main.main_track_details', id=track.track_id) }}">
+        <div class="card">
+            <img id="search-image" class="card-img-top" src="{{ track.image_url }}" alt="Card image cap">
+            <div class="custom-card-wrapper">
+                <div class="card-body">
+                    <h5 class="card-title">{{ track.track_name }}</h5>
+                    <p class="card-text">{{ track.artist }}</p>
+                </div>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

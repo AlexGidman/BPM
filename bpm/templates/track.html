@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} : {{ track.track_name }}{% endblock %}
+{% block body %}
+<div>
+    <a href="{{ url_for('main.main_track_details', id=track.track_id) }}">
+        <img src="{{ track.image_url }}" style="height: 400px; margin: 20px;">
+    </a>
+    <span>
+        <table>
+            <tr>
+                <td><b>Track:</b></td>
+                <td>{{ track.track_name }}</td>
+                <td rowspan="4" style="width: 20px; text-align: center;">
+                    <a href="{{ track.track_url}}" target="_blank">
+                        <img id="search-image" src="{{ url_for('static', filename='play_icon.png') }}" style="height: 100px;">
+                    </a>
+                    Click to listen on Spotify!!!
+                </td>
+            </tr>
+            <tr>
+                <td><b>Artist:</b></td>
+                <td>{{ track.artist }}</td>
+            </tr>
+            <tr>
+                <td><b>Tempo:</b></td>
+                <td>{{ track.tempo }} bpm</td>
+            </tr>
+            <tr>
+                <td><b>Key:</b></td>
+                <td>{{ track.key }}</td>
+            </tr>
+        </table>
+
+    </span>
+</div>
+{% endblock %}

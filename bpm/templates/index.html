@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} : Home{% endblock %}
+{% block body %}
+
+<a href="{{ url_for('main.main_index') }}" class="navbar-brand">
+    <img src="{{ url_for('static', filename='bpm_logo.png') }}" height="auto"
+        style="max-width: 400px; margin-top: 50px">
+</a>
+<div class="body-text">
+    <h2>Enter a track name and search!</h2>
+</div>
+
+<form action="/search" method="post">
+    <input class="bpm-search" type="text" name="track" size="50" placeholder="Track Name"> <br><br>
+    <input class="bpm-search" id="search-btn" type="submit" value="Search">
+</form>
+
+{% endblock %}
