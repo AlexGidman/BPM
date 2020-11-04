@@ -1,5 +1,5 @@
 # BPM
-A web application for searching Spotify for track information. Built using thee Flask framework.
+A web application for searching Spotify for track information, built using the Flask framework.
 
 ### Dependencies
 * Python3
@@ -24,6 +24,7 @@ Finally, providing you have a client_id & client_secret configured for the Spoti
 ```
 flask run
 ```
+Open your local host URL on your web browser.
 
 ### API_KEY
 You will need to create an api_key.py file and store it in the parent directory 'BPM'. Within the api_key.py file you should define a python dict 'api_key':
