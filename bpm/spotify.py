@@ -139,7 +139,6 @@ class SpotifyAPI():
             Exception: Authentication failed - ensure client credentials are correct.
 
         """
-        print("performed auth")
 
         token_url = self.token_url
         token_data = self._get_token_data()
@@ -360,6 +359,8 @@ class SpotifyAPI():
         """
 
         json_data = self.search(query, "track")
+        print("HERE:")
+        print(json_data)
         tracks = []
         try:
             tracks = [{'track_id': i['id'],
@@ -371,6 +372,7 @@ class SpotifyAPI():
         except:
             raise Exception("Invalid search, no data found")
         finally:
+            print(tracks)
             return tracks
 
 
