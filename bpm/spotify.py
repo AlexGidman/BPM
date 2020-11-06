@@ -269,6 +269,7 @@ class SpotifyAPI():
             track["image_url"] = track_data['album']['images'][0]['url']
         except:
             return {}
+        print(track)
         return track
 
 
@@ -363,6 +364,7 @@ class SpotifyAPI():
         print(json_data)
         tracks = []
         try:
+            print(json_data)
             tracks = [{'track_id': i['id'],
                        'track_name': i['name'],
                        'artist': i['artists'][0]['name'],
@@ -372,7 +374,7 @@ class SpotifyAPI():
         except:
             raise Exception("Invalid search, no data found")
         finally:
-            print(tracks)
+            
             return tracks
 
 
@@ -401,7 +403,7 @@ class SpotifyAPI():
 
         try:
             track_data = self._get_track_features(track_id)
-            key = self.key_convert(track_data['key'], track_data['mode'])
+            key = self.key_convert(track_data['key'], track_data['mode'])        
             tempo = int(track_data['tempo'])
             musical_data = {"track_id": track_id,
                             "key": key,

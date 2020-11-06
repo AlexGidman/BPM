@@ -75,10 +75,42 @@ def valid_request():
 
 
 @pytest.fixture
-def valid_get_tracks_list():
+def valid_get_tracks_data() -> list:
     return [{'track_id': 'mock_id',
              'track_name': 'mock_name',
              'artist': 'mock_artist',
              'track_url': 'mock_track_url',
              'image_url': 'mock_image_url'
              }]
+
+
+@pytest.fixture
+def valid_track_data_request(valid_request) -> Mock:
+    # track data from valid request 
+    get_resource = valid_request.json.return_value['tracks']['items'][0] 
+    # additional musical data
+    get_musical_data = { 
+        'mock_json_data': 'mock_json_data',
+        'key': 4,
+        'mode': 1,
+        'tempo': '120'}
+    mock = Mock()
+    mock.status_code = 200
+    mock.json.return_value = {**get_resource, **get_musical_data}
+    return mock
+
+@pytest.fixture
+def valid_get_musical_data() -> dict:
+    return {'track_id': 'mock_track_id',
+            'key': 'E Major',
+            'tempo': 120}
+
+@pytest.fixture
+def valid_get_track_data() -> dict:
+    return {'track_id': 'mock_track_id',
+            'key': 'E Major',
+            'tempo': 120, 
+            'track_name': 'mock_name', 
+            'artist': 'mock_artist', 
+            'track_url': 'mock_track_url', 
+            'image_url': 'mock_image_url'}
