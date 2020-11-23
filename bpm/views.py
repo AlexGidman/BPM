@@ -7,10 +7,13 @@ from pprint import pprint
 from .spotify import SpotifyAPI
 from api_key import api_key
 
-main = Blueprint("main", __name__)
 
-# Configure Spotify API
-spotify = SpotifyAPI(api_key['client_id'], api_key['client_secret'])
+if __name__ == "bpm.views": # this is for Sphinx auto-doc-extension
+    # Configure Blueprint
+    main = Blueprint("main", __name__)
+    # Configure Spotify API
+    spotify = SpotifyAPI(api_key['client_id'], api_key['client_secret'])
+
 
 @main.route('/')
 def main_index():

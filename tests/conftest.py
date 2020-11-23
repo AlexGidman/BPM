@@ -6,7 +6,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 import pytest
 from unittest.mock import Mock, patch
 
-
 import api_key
 from bpm import spotify
 

@@ -21,12 +21,12 @@ class SpotifyAPI():
     Can perform authentication to obtain an access token for the spotify api, and then make requests
     of that api such as searching for artist, album, or track data.
 
-    Typical usage example:
+    Typical usage example::
 
-      spotify = SpotifyAPI(client_id, client_secret)
-      results = spotify.search(query={"track": "money", "artist": "pink floyd"},
+        spotify = SpotifyAPI(client_id, client_secret)
+        results = spotify.search(query={"track": "money", "artist": "pink floyd"},
                                     search_type="track",
-                                    market_type="US")
+                                    market_type="US")`
 
     Attributes:
         access_token: a time-limited access token string provided by spotify for making api
@@ -40,7 +40,7 @@ class SpotifyAPI():
     """
 
     access_token = None
-    access_token_expires = datetime.datetime.now
+    access_token_expires = datetime.datetime.now()
     access_token_did_expire = True
     client_id = None
     client_secret = None
@@ -238,17 +238,17 @@ class SpotifyAPI():
     def get_track(self, lookup_id: str) -> dict:
         """Gets track data from spotify based on lookup_id
 
-          Typical usage example:
+        Typical usage example::
 
-          track = SpotifyAPI.get_track("XXXXyyyyYYYYxxxxZZZZab")
-          print(track)
-          {'artist': _,
-           'image_url': _,
-           'key': _,
-           'tempo': _,
-           'track_id': _,
-           'track_name': _,
-           'track_url': _}
+            track = SpotifyAPI.get_track("XXXXyyyyYYYYxxxxZZZZab")
+            print(track)
+            {'artist': _,
+            'image_url': _,
+            'key': _,
+            'tempo': _,
+            'track_id': _,
+            'track_name': _,
+            'track_url': _}
 
         Args:
             lookup_id(str): a string of 22 alphanumeric characters related to specific track,
@@ -337,16 +337,16 @@ class SpotifyAPI():
         Retrieves JSON data related to search request and returns as a formatted list of dicts for
         easy lookup and manipulation.
 
-          Typical usage Example:
+        Typical usage Example::
 
-          results = SpotifyAPI.get_tracks({'track': 'money'})
-          first_result = results[0]
-          print(first_result)
-          {'track_id': _,
-          'track_name: _,
-          'artist': _,
-          'track_url': _,
-          'image_url': _}
+            results = SpotifyAPI.get_tracks({'track': 'money'})
+            first_result = results[0]
+            print(first_result)
+            {'track_id': _,
+            'track_name: _,
+            'artist': _,
+            'track_url': _,
+            'image_url': _}
 
         Args:
             query(dict): the search query as a dict of parameters such as {'track': '<song_title>'}
@@ -360,11 +360,8 @@ class SpotifyAPI():
         """
 
         json_data = self.search(query, "track")
-        print("HERE:")
-        print(json_data)
         tracks = []
         try:
-            print(json_data)
             tracks = [{'track_id': i['id'],
                        'track_name': i['name'],
                        'artist': i['artists'][0]['name'],
@@ -381,13 +378,13 @@ class SpotifyAPI():
     def get_musical_data(self, track_id: str) -> dict:
         """Gets key and tempo info related to track
 
-          Typical usage example:
+        Typical usage example::
 
-          results = SpotifyAPI.get_musical_data("XXXXyyyyYYYYxxxxZZZZab")
-          print(results)
-          {'track_id': 'XXXXyyyyYYYYxxxxZZZZab',
-          'key': 'B Minor',
-          'tempo': 120}
+            results = SpotifyAPI.get_musical_data("XXXXyyyyYYYYxxxxZZZZab")
+            print(results)
+            {'track_id': 'XXXXyyyyYYYYxxxxZZZZab',
+            'key': 'B Minor',
+            'tempo': 120}
 
         Args:
             lookup_id(str): a string of 22 alphanumeric characters related to specific track,
