@@ -1,0 +1,2 @@
+FLASK_APP=bpm
+FLASK_DEBUG=1
