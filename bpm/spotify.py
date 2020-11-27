@@ -269,7 +269,6 @@ class SpotifyAPI():
             track["image_url"] = track_data['album']['images'][0]['url']
         except:
             return {}
-        print(track)
         return track
 
 
@@ -360,11 +359,8 @@ class SpotifyAPI():
         """
 
         json_data = self.search(query, "track")
-        print("HERE:")
-        print(json_data)
         tracks = []
         try:
-            print(json_data)
             tracks = [{'track_id': i['id'],
                        'track_name': i['name'],
                        'artist': i['artists'][0]['name'],

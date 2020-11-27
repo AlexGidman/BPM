@@ -3,7 +3,6 @@ All web app views (aka routes) for BPM flask application found in here.
 """
 
 from flask import Blueprint, render_template, url_for, redirect, request, flash
-from pprint import pprint
 from .spotify import SpotifyAPI
 from api_key import api_key
 
@@ -64,8 +63,6 @@ def main_advanced_search():
             search_query['artist'] = request.form.get('artist')
         if request.form.get('album'):
             search_query['album'] = request.form.get('album')
-        
-        pprint(search_query)
 
         tracks = spotify.get_tracks(search_query)
         return render_template("search.html", tracks=tracks)
