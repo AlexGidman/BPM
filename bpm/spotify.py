@@ -399,7 +399,7 @@ class SpotifyAPI():
 
         try:
             track_data = self._get_track_features(track_id)
-            key = self.key_convert(track_data['key'], track_data['mode'])        
+            key = self.key_convert(track_data['key'], track_data['mode'])
             tempo = int(track_data['tempo'])
             musical_data = {"track_id": track_id,
                             "key": key,
