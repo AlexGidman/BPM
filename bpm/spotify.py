@@ -370,7 +370,6 @@ class SpotifyAPI():
         except:
             raise Exception("Invalid search, no data found")
         finally:
-            
             return tracks
 
 
