@@ -1,4 +1,5 @@
-pytest
+pytest~=6.1.0
+python-dotenv
 
 -r bpm/requirements.txt
 -r docs/requirements.txt
