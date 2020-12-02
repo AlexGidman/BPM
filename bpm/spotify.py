@@ -433,3 +433,6 @@ class SpotifyAPI():
         if mode == 0:
             return f"{keys[key]} Minor"
         return keys[key]
+
+if __name__ == "__main__":
+    pass
