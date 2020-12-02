@@ -133,4 +133,4 @@ dmypy.json
 *.idea
 
 # API Key
-api_key.py
+start.sh
