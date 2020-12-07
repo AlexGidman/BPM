@@ -392,8 +392,8 @@ class SpotifyAPI():
 
         try:
             track_data = self._get_track_features(track_id)
-            key = self.key_convert(track_data['key'], track_data['mode'])
-            tempo = int(track_data['tempo'])
+            key = self.key_convert(track_data.get('key'), track_data.get('mode'))
+            tempo = int(track_data.get('tempo'))
             musical_data = {"track_id": track_id,
                             "key": key,
                             "tempo": tempo}
@@ -427,6 +427,3 @@ class SpotifyAPI():
         if mode == 0:
             return f"{keys[key]} Minor"
         return keys[key]
-
-if __name__ == "__main__":
-    pass
