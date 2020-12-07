@@ -33,8 +33,6 @@ class SpotifyAPI():
           requests.
         access_token_expires: time at which current access_token expires.
         access_token_did_expire: expresses whether access_token has expired or not.
-        client_id: spotify client id for the application.
-        client_secret: spotify client secret for the application, relates to specific client id.
         token_url: url for obtaining spotify access token.
 
     """
@@ -47,7 +45,6 @@ class SpotifyAPI():
             client_id (str): spotify client id for the application.
             client_secret (str): spotify client secret for the application, relates to specific
               client id.
-
         """
         self.client_id = client_id
         self.client_secret = client_secret
