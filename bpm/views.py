@@ -8,14 +8,14 @@ from flask import (Blueprint, render_template, url_for, redirect, request, flash
 from .spotify import SpotifyAPI
 
 
-if __name__ == "bpm.views": # this is for Sphinx auto-doc-extension
-    # Configure Blueprint
-    main = Blueprint("main", __name__)
-    # Configure Spotify API
-    CLIENT_ID = os.environ.get('CLIENT_ID')
-    CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
-    spotify = SpotifyAPI(CLIENT_ID, CLIENT_SECRET)
+# Configure Blueprint
+main = Blueprint("main", __name__)
 
+# Configure Spotify API
+CLIENT_ID = os.environ.get('CLIENT_ID')
+CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
+if CLIENT_ID and CLIENT_SECRET: # this is for Sphinx auto-doc-extension
+    spotify = SpotifyAPI(CLIENT_ID, CLIENT_SECRET)
 
 @main.route('/')
 def main_index():

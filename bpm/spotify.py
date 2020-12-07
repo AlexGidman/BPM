@@ -39,13 +39,6 @@ class SpotifyAPI():
 
     """
 
-    access_token = None
-    access_token_expires = datetime.datetime.now()
-    access_token_did_expire = True
-    client_id = None
-    client_secret = None
-    token_url = "https://accounts.spotify.com/api/token"
-
 
     def __init__(self, client_id: str, client_secret: str) -> None:
         """Inits SpotifyAPI class and performs authentication.
@@ -58,6 +51,10 @@ class SpotifyAPI():
         """
         self.client_id = client_id
         self.client_secret = client_secret
+        self.access_token = None
+        self.access_token_expires = datetime.datetime.now()
+        self.access_token_did_expire = True
+        self.token_url = "https://accounts.spotify.com/api/token"
         self._perform_auth()
 
 

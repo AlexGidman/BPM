@@ -1,13 +1,13 @@
 spotify.py
-==========
+-----------
 
 .. automodule:: bpm.spotify
    :members:
-   :noindex:
-
+   :undoc-members:
+   :show-inheritance:
 
 views.py
-========
+--------
 
 .. automodule:: bpm.views
    :members:
