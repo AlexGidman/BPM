@@ -18,40 +18,24 @@ Dependencies
 Executing program (development only)
 ------------------------------------
 
-Once you have installed dependencies, you need to set the FLASK_APP & FLASK_ENV variables:
-
-* Mac / Linux 
+Once you have installed dependencies, execute the following shell script:
 
   .. code-block::
 
-     export FLASK_APP=bpm
-     export FLASK_ENV=development
-
-* Windows
-  .. code-block::
-
-     set FLASK_APP=bpm
-     set FLASK_ENV=development
-
-Finally, providing you have a client_id & client_secret configured for the SpotifyAPI class, you can
-run:
-
-  .. code-block::
-
-     flask run
+     ./flask_run.sh
 
 Open your local host URL on your web browser.
 
 API_KEY
 -------
 
-You will need to create an api_key.py file and store it in the parent directory 'BPM'. Within the
-api_key.py file you should define a python dict 'api_key':
+You will need to set the api key environment variables for the application to work correctly. This
+can be done as follows:
 
 .. code-block::
 
-   api_key = {'client_id': "<client id>",
-               'client_secret': "<client secret>"}
+   export CLIENT_ID="<client_id>"
+   export CLIENT_SECRET="<client_id>"
 
 Obtaining client id & client secret
 -----------------------------------
