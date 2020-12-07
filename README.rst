@@ -40,10 +40,20 @@ can be done as follows:
 Obtaining client id & client secret
 -----------------------------------
 
-
 * Register a Spotify account and login to the developer site `here <https://developer.spotify.com/>`_
 * Go to the Dashboard, and "Create An App".
 * Copy and paste client id & client secret into api_key.py file as shown above.
+
+Creating Documentation
+----------------------
+
+Documentation is built using sphinx. Once sphinx has been installed, ensure the docs/source folder
+is present. If so, run the following shell script to make the documentation and view in browser:
+
+.. code-block::
+
+   ./create_docs.sh
+
 
 Authors
 -------
