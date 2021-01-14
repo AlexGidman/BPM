@@ -1,5 +1,5 @@
-bpm_project
-===========
+Modules
+=========
 
 .. toctree::
    :maxdepth: 4
