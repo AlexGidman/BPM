@@ -22,7 +22,7 @@ def main_index():
     """Main index route 'Homepage'
 
     Returns:
-        GET: index.html template
+        GET - index.html template.
 
     """
 
@@ -34,8 +34,8 @@ def main_search():
     """Search route
 
     Returns:
-        POST: search.html template with search results (tracks)
-        GET: redirects to main index route.
+        POST - search.html template with search results (tracks).\n
+        GET - redirects to main index route.
 
     """
 
@@ -56,8 +56,8 @@ def main_advanced_search():
     """Advanced Search route
 
     Returns:
-        POST: search.html template with search results (tracks)
-        GET: advanced.html template
+        POST - search.html template with search results (tracks).\n
+        GET - advanced.html template.
 
     """
 
@@ -85,7 +85,7 @@ def main_track_details(id: str = None):
         id(str): 22 character alphaumeric string representing a Spotify track id
 
     Returns:
-        GET: track.html template with track data, redirects to main index route if track doesn't exist.
+        GET - track.html template with track data, redirects to main index route if track doesn't exist.
 
     """
 
