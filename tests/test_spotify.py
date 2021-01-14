@@ -10,7 +10,8 @@ class TestClassInitialisation:
     def test_failed_authentication_of_api_class(self, invalid_client_id, invalid_client_secret):
         with pytest.raises(Exception):
             spotify.SpotifyAPI(invalid_client_id, invalid_client_secret)
-
+    
+    @pytest.mark.skip  # system test, not unit test
     def test_successful_authentication_of_api_class(self, valid_client_id, valid_client_secret):
         api_client = spotify.SpotifyAPI(valid_client_id, valid_client_secret)
         assert api_client
