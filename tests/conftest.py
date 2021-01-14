@@ -7,7 +7,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 import pytest
 from unittest.mock import Mock, patch
 
-import api_key
 from bpm import spotify
 
 
@@ -15,14 +14,14 @@ from bpm import spotify
 def valid_client_id() -> str:
     '''Returns valid client id for api authentication as str'''
 
-    return api_key.api_key['client_id']
+    return os.environ.get('CLIENT_ID')
 
 
 @pytest.fixture
 def valid_client_secret() -> str:
     '''Returns valid client secret for api authentication as str'''
 
-    return api_key.api_key['client_secret']
+    return os.environ.get('CLIENT_SECRET')
 
 
 @pytest.fixture
