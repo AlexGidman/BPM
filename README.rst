@@ -11,22 +11,34 @@ Dependencies
   
 * Project specific dependencies can be found in requirements.txt and can be installed via pip:
 
-  .. code-block::
+.. code-block::
 
-     pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Executing program (development only)
 ------------------------------------
 
-Once you have installed dependencies, execute the following shell script:
+Once you have installed dependencies, execute the following command:
 
-  .. code-block::
+.. code-block::
 
-     ./flask_run.sh
+    flask run
 
 Open your local host URL on your web browser.
 
-API_KEY
+Using Docker
+------------
+
+If you have Docker installed on your system you can run the application by setting the api key
+environment variables, and then running:
+
+.. code-block::
+
+    docker-compose up --build
+
+Open your local host URL on your web browser.
+
+API key
 -------
 
 You will need to set the api key environment variables for the application to work correctly. This
@@ -34,8 +46,8 @@ can be done as follows:
 
 .. code-block::
 
-   export CLIENT_ID="<client_id>"
-   export CLIENT_SECRET="<client_id>"
+export CLIENT_ID="<client_id>"
+export CLIENT_SECRET="<client_id>"
 
 Obtaining client id & client secret
 -----------------------------------
@@ -52,7 +64,7 @@ is present. If so, run the following shell script to make the documentation and 
 
 .. code-block::
 
-   ./create_docs.sh
+./create_docs.sh
 
 
 Authors
