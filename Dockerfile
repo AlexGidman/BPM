@@ -6,16 +6,23 @@ RUN apk add --no-cache python3 py3-pip
 # create and checkout working directory
 WORKDIR /app
 
-# Copy over source code
-COPY . /app
+# copy api key env variables - might need to be done in compose
 
-# install requirements
+# copy over bpm source code
+COPY bpm/ /app/bpm
+COPY ./.flaskenv /app
+COPY ./requirements.txt /app
+
+# copy over docs
+COPY docs/ /app/docs
+COPY ./create_docs.sh /app
+
+# # install requirements
 RUN pip --no-cache-dir install -r requirements.txt
-
-RUN chmod +x start.sh
-# RUN chmod +x create_docs.sh
 
 EXPOSE 5000
 
-ENTRYPOINT ["./flask_run.sh"]
-# CMD ["./create_docs.sh"]
+ENTRYPOINT ["flask", "run"]
+
+# RUN chmod +x create_docs.sh
+# ["./create_docs.sh"]
