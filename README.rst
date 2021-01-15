@@ -18,11 +18,11 @@ Dependencies
 Executing program (development only)
 ------------------------------------
 
-Once you have installed dependencies, execute the following shell script:
+Once you have installed dependencies, execute the following command:
 
   .. code-block::
 
-     ./flask_run.sh
+     flask run
 
 Open your local host URL on your web browser.
 
