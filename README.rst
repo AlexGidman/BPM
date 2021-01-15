@@ -46,8 +46,8 @@ can be done as follows:
 
 .. code-block::
 
-export CLIENT_ID="<client_id>"
-export CLIENT_SECRET="<client_id>"
+  export CLIENT_ID="<client_id>"
+  export CLIENT_SECRET="<client_id>"
 
 Obtaining client id & client secret
 -----------------------------------
