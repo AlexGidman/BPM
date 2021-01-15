@@ -64,7 +64,7 @@ is present. If so, run the following shell script to make the documentation and 
 
 .. code-block::
 
-./create_docs.sh
+  ./create_docs.sh
 
 
 Authors
