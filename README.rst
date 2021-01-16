@@ -27,7 +27,7 @@ Once you have installed dependencies, execute the following command:
 Open localhost:5000 URL on your web browser.
 
 Using Docker
-------------
+~~~~~~~~~~~~
 
 If you have Docker installed on your system you can run the application by setting the api key
 environment variables, and then running:
