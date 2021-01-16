@@ -18,6 +18,20 @@ Dependencies
 Executing program (development only)
 ------------------------------------
 
+Set API key
+~~~~~~~~~~~
+
+You will need to set the api key environment variables for the application to work correctly. This
+can be done as follows:
+
+.. code-block::
+
+  export CLIENT_ID="<client_id>"
+  export CLIENT_SECRET="<client_id>"
+
+Run Program
+~~~~~~~~~~~
+
 Once you have installed dependencies, execute the following command:
 
 .. code-block::
@@ -26,8 +40,8 @@ Once you have installed dependencies, execute the following command:
 
 Open localhost:5000 URL on your web browser.
 
-Using Docker
-~~~~~~~~~~~~
+Run Using Docker
+~~~~~~~~~~~~~~~~
 
 If you have Docker installed on your system you can run the application by setting the api key
 environment variables, and then running:
@@ -38,17 +52,6 @@ environment variables, and then running:
 
 For the application, open localhost:5000 URL on your web browser.
 For the documentation, open localhost:80 URL on your web browser.
-
-API key
--------
-
-You will need to set the api key environment variables for the application to work correctly. This
-can be done as follows:
-
-.. code-block::
-
-  export CLIENT_ID="<client_id>"
-  export CLIENT_SECRET="<client_id>"
 
 Obtaining client id & client secret
 -----------------------------------
