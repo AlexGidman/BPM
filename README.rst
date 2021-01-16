@@ -24,7 +24,7 @@ Once you have installed dependencies, execute the following command:
 
     flask run
 
-Open your local host URL on your web browser.
+Open localhost:5000 URL on your web browser.
 
 Using Docker
 ------------
@@ -36,7 +36,8 @@ environment variables, and then running:
 
     docker-compose up --build
 
-Open your local host URL on your web browser.
+For the application, open localhost:5000 URL on your web browser.
+For the documentation, open localhost:80 URL on your web browser.
 
 API key
 -------
@@ -65,7 +66,6 @@ is present. If so, run the following shell script to make the documentation and 
 .. code-block::
 
   ./create_docs.sh
-
 
 Authors
 -------
