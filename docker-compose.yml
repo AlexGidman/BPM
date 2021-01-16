@@ -1,16 +1,20 @@
 services:
+  documentation:
+    image: docs
+    build:
+      context: .
+      dockerfile: docs/Dockerfile
+    ports:
+    - "80:80"
+
   backend:
     image: bpm
-    build: .
+    build:
+      context: .
+      dockerfile: bpm/Dockerfile
     ports:
       - "5000:5000"
     restart: always
     environment:
     - CLIENT_ID=${CLIENT_ID}
     - CLIENT_SECRET=${CLIENT_SECRET}
-
-  documentation:
-    image: docs
-    build: .
-    ports:
-    - "80:80"
