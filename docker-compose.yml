@@ -1,8 +1,16 @@
 services:
-  web:
+  backend:
+    image: bpm
     build: .
     ports:
       - "5000:5000"
+    restart: always
     environment:
     - CLIENT_ID=${CLIENT_ID}
     - CLIENT_SECRET=${CLIENT_SECRET}
+
+  documentation:
+    image: docs
+    build: .
+    ports:
+    - "80:80"
