@@ -1,4 +1,4 @@
-## DOCS BUILD ##
+## BASE IMAGE ##
 FROM alpine:latest as baseimage
 
 # install python3 (don't cache it)
@@ -8,8 +8,9 @@ RUN apk add --update make
 # create and checkout working directory
 WORKDIR /app
 
-# copy docs files
+# copy files
 COPY bpm/ /app/bpm
+COPY ./.flaskenv /app
 COPY docs/ /app/docs
 COPY requirements.txt /app
 COPY README.rst /app
@@ -19,7 +20,16 @@ RUN pip --no-cache-dir install -r requirements.txt
 
 RUN cd docs; make clean html; cd ..;
 
-## DOCS SERVED ON NGINX
+
+## BACKEND ##
+FROM baseimage as backend
+
+EXPOSE 5000
+
+ENTRYPOINT ["flask", "run"]
+
+
+## DOCS ##
 FROM nginx as documentation
 
 COPY --from=baseimage app/docs/build/html /usr/share/nginx/html

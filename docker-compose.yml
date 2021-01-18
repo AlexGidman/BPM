@@ -3,7 +3,7 @@ services:
     image: docs
     build:
       context: .
-      dockerfile: docs/Dockerfile
+      target: documentation
     ports:
     - "80:80"
 
@@ -11,7 +11,7 @@ services:
     image: bpm
     build:
       context: .
-      dockerfile: bpm/Dockerfile
+      target: backend
     ports:
       - "5000:5000"
     restart: always
