@@ -26,7 +26,7 @@ FROM baseimage as backend
 
 EXPOSE 5000
 
-ENTRYPOINT ["flask", "run"]
+ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:5000", "bpm:create_app()"]
 
 
 ## DOCS ##
